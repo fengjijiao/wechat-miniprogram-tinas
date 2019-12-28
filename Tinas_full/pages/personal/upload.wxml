@@ -1,0 +1,23 @@
+<!--pages/personal/upload.wxml-->
+<layout>
+  <wux-toptips id="wux-toptips" />
+  <wux-toast id="wux-toast" />
+  <view class="container">
+    <view class="sub-title">选择照片</view>
+    <progress class="progress" percent="{{ progress }}" />
+    <wux-upload listType="picture-card" max="12" name="photo" progress="true" url="https://{{globalData.appSettings.appRequestDomain}}/uploadPhoto" bind:change="onChange" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete" bind:preview="onPreview"
+      bind:progress="onProgress" bind:remove="onRemove" formData="{{formAuthData}}">
+      <text>上传</text>
+    </wux-upload>
+      <wux-field initialValue="{{ popupSelect }}">
+        <wux-popup-select options="{{ options2 }}" bind:change="onPopupSelectChange">
+          <wux-cell title="分类" is-link extra="{{ popupSelect }}"></wux-cell>
+        </wux-popup-select>
+      </wux-field>
+    <form class="form" report-submit='true' bindsubmit="publish">
+      <button class="form_button" form-type="submit">
+        <wux-button block type="positive">发布</wux-button>
+      </button>
+    </form>
+  </view>
+</layout>

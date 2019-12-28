@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "wux-search-bar": "../../miniprogram_npm/wux-weapp/search-bar/index",
+    "wux-card": "../../miniprogram_npm/wux-weapp/card/index",
+    "wux-wing-blank": "../../miniprogram_npm/wux-weapp/wing-blank/index",
+    "wux-tag": "../../miniprogram_npm/wux-weapp/tag/index",
+    "wux-segmented-control": "../../miniprogram_npm/wux-weapp/segmented-control/index",
+    "wux-timeago": "../../miniprogram_npm/wux-weapp/timeago/index",
+    "wux-gallery": "../../miniprogram_npm/wux-weapp/gallery/index",
+    "wux-divider": "../../miniprogram_npm/wux-weapp/divider/index"
+  }
+}

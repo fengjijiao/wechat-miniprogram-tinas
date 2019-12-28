@@ -1,0 +1,27 @@
+<!--pages/landscape/index.wxml-->
+<layout>
+  <view class="container">
+    <wux-search-bar clear maxlength="8" />
+    <view class="landscape-list">
+      <wux-tabs wux-class="bordered" controlled current="{{currentTab}}" bindchange="onTabsChange">
+        <wux-tab key="0" title="按分类"></wux-tab>
+        <wux-tab key="1" title="按个人"></wux-tab>
+      </wux-tabs>
+        <view wx:if="{{currentTab==0}}"><!--按分类-->
+        <view wx:for="{{listByClassification}}" wx:key="classification_"><!--wx:key未知用法-->
+          <wux-cell title="{{item.classificationName}}" is-link extra="{{item.quantity}}张"></wux-cell>
+        </view>
+        </view>
+        <view wx:elif="{{currentTab==1}}"><!--按个人-->
+          <wux-sticky scrollTop="{{scrollTop}}" wx:for="{{listByPersonal}}" wx:for-item="personal" wx:key="personal_" wx:for-index="personalIndex">
+            <wux-sticky-item>
+              <view slot="title">{{personal.personalName}}</view>
+              <view slot="content" wx:for="{{personal.personalClassifications}}" wx:for-item="personalClassification" wx:key="personalClassification_{{personalIndex}}">
+                <wux-cell title="{{personalClassification.classificationName}}" is-link extra="{{personalClassification.quantity}}张"></wux-cell>
+              </view>
+            </wux-sticky-item>
+          </wux-sticky>
+          </view>
+    </view>
+  </view>
+</layout>

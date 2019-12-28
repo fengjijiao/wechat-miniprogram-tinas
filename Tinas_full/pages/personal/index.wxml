@@ -1,0 +1,40 @@
+<!--pages/personal/index.wxml-->
+<layout>
+  <view class="container">
+    <view class="userinfo" wx:if="{{userInfo}}">
+      <image class="userinfo-avatar" src="{{globalData.userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{globalData.userInfo.nickName}}</text>
+    </view>
+    <view class="userinfo" wx:else>
+      <image class="userinfo-avatar" src="../../assets/images/logo.png" mode="cover"></image>
+      <text class="userinfo-nickname">Tinas</text>
+    </view>
+    <wux-row>
+      <wux-col span="4">
+        <view class="placeholder">照片数</view>
+      </wux-col>
+      <wux-col span="4">
+        <view class="placeholder">相册数</view>
+      </wux-col>
+      <wux-col span="4">
+        <view class="placeholder">贡献点</view>
+      </wux-col>
+    </wux-row>
+    <wux-row>
+      <wux-col span="4">
+        <view class="placeholder">{{ExtraUserInfo.photoNumber}}</view>
+      </wux-col>
+      <wux-col span="4">
+        <view class="placeholder">{{ExtraUserInfo.albumNumber}}</view>
+      </wux-col>
+      <wux-col span="4">
+        <view class="placeholder">{{ExtraUserInfo.Contribution}}</view>
+      </wux-col>
+    </wux-row>
+    <view class="background-white">
+      <wux-cell title="登录" is-link open-type="getUserInfo" bind:getuserinfo="onGotUserInfo" disabled="{{userInfo}}"></wux-cell>
+      <wux-cell title="上传" is-link url="/pages/personal/upload" open-type="navigateTo" disabled="{{!userInfo}}"></wux-cell>
+      <wux-cell title="客服" is-link open-type="contact" bind:contact="onContact"></wux-cell>
+    </view>
+  </view>
+</layout>

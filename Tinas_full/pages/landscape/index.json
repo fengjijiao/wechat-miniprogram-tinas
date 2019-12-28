@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "相册",
+  "usingComponents": {
+    "wux-search-bar": "/miniprogram_npm/wux-weapp/search-bar/index",
+    "wux-sticky": "/miniprogram_npm/wux-weapp/sticky/index",
+    "wux-sticky-item": "/miniprogram_npm/wux-weapp/sticky-item/index",
+    "wux-cell": "/miniprogram_npm/wux-weapp/cell/index",
+    "wux-tabs": "/miniprogram_npm/wux-weapp/tabs/index",
+    "wux-tab": "/miniprogram_npm/wux-weapp/tab/index"
+  }
+}

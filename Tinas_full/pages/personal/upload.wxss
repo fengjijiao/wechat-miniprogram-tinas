@@ -1,0 +1,8 @@
+/* pages/personal/upload.wxss */
+.container {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+.progress {
+  padding-bottom: 3vw;
+}

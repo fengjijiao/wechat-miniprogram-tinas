@@ -1,0 +1,17 @@
+<!--pages/personal/about.wxml-->
+<layout>
+<view class="container">
+  <view class="appinfo">
+    <image class="appinfo-logo" src="../../assets/images/logo.png" mode="cover"></image>
+    <text class="appinfo-version">{{globalData.appInfo.appName}}</text>
+  </view>
+  <view class="accordion">
+    <wux-accordion-group default-current="{{ ['0', '1'] }}">
+      <wux-accordion title="初衷" content="用于保存珍贵瞬间；按时间轴顺序！"></wux-accordion>
+      <wux-accordion title="适用" content="上传照片后，需要通过审核，以保持本相簿的有序。"></wux-accordion>
+      <wux-accordion title="作者" content="fengjijiao"></wux-accordion>
+    </wux-accordion-group>
+  </view>
+  <view class="wux-text--center footer">Copyright 2019 fengjijiao. All Rights Reserved.</view>
+</view>
+</layout>

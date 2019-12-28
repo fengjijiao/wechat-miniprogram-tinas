@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "wux-cell-group": "../../miniprogram_npm/wux-weapp/cell-group/index",
+    "wux-cell": "../../miniprogram_npm/wux-weapp/cell/index",
+    "wux-row": "../../miniprogram_npm/wux-weapp/row/index",
+    "wux-col": "../../miniprogram_npm/wux-weapp/col/index"
+  }
+}

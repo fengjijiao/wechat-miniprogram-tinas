@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<layout>
+  <wux-gallery id="wux-gallery" />
+  <view class="container">
+    <!--wux-search-bar clear maxlength="8"/-->
+    <view wx:if="{{index_settings.AlbumsTaskFinished}}">
+      <wux-wing-blank class="photos-wing-blank" size="default" wx:for="{{ albums }}" wx:for-item="album" wx:for-index="album_id" wx:key="albums">
+        <wux-card bordered="{{ false }}" title="{{ album.nickName }}" extra="{{ album.photos.length }}张" thumb="{{ album.avatarUrl }}">
+          <view slot="body">
+            <block wx:for="{{album.photos}}" wx:for-item="photo" wx:for-index="photo_id" wx:key="photos">
+              <view class="weui-uploader__file" bindtap="previewImage" data-current="https://tinas.fengjijiao.cn/getImages?pid={{photo}}" data-album_id="{{ album_id }}">
+                <image class="weui-uploader__img" src="https://tinas.fengjijiao.cn/getImages?pid={{photo}}" />
+              </view>
+            </block>
+          </view>
+          <view class="wing-blank-footer" slot="footer">
+            <!--view>
+            <wux-tag color="magenta">人</wux-tag>
+            <wux-tag color="red">动物</wux-tag>
+            <wux-tag color="volcano">植物</wux-tag>
+            <wux-tag color="orange">杯子</wux-tag>
+          </view-->
+            <view>
+              <wux-divider show-text="{{ false }}" dashed />
+              <wux-timeago to="{{ album.timestamp }}" lang="zh_CN" />
+            </view>
+          </view>
+        </wux-card>
+      </wux-wing-blank>
+    </view>
+    <view wx:else>
+      <view class="weui-loadmore">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+    </view>
+    <view wx:if="{{index_settings.AlbumsAddUnFinished}}">
+      <view class="weui-loadmore">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+    </view>
+    <view wx:else>
+      <view wx:if="{{index_settings.AlbumsNoMored}}">
+        <view class="weui-loadmore">
+          <view class="weui-loadmore__tips">已经到底了!</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</layout>
